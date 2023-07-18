@@ -81,3 +81,27 @@
     width: 100%;
     padding: 1rem 1rem 1rem 3rem;
 }
+
+.selectable-time-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: .5rem;
+    gap: .2rem;
+    cursor: pointer;
+    width: 75%;
+    height: 2rem;
+    border-radius: 10px;
+    padding: .2rem 0 .2rem 1rem;
+    transition: all .3s;
+}
+
+.selectable-time-container:hover {
+    background-color: rgba(219, 96, 219, 0.801);
+}
+
+.side-bar-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
