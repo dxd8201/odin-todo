@@ -1,6 +1,6 @@
 import './style.css';
-import createProject from './modules/createProject.js'
-import createTodo from './modules/createTodo.js'
+import CreateProject from './modules/createProject.js'
+import CreateTodo from './modules/createTodo.js'
 
 
 function component() {
@@ -14,11 +14,16 @@ const contentCreation = (() => {
   const newTodoListener = document.getElementById("newTodo");
 
   newProjectListener.addEventListener("click", function() {
-    createProject();
+    new CreateProject();
   });
 
   newTodoListener.addEventListener("click", function() {
-    createTodo();
+    const todoTaskContainerListener = document.getElementById("todoTaskContainer");
+    todoTaskContainerListener.appendChild(new CreateTodo("99 woodcutting", "7/31/2023"));
+    
+    // new CreateTodo("99 woodcutting", "7/31/2023");
+
+    
   });
 
 })();
