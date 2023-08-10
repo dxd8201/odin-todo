@@ -14,7 +14,10 @@ const contentCreation = (() => {
   const newTodoListener = document.getElementById("newTodo");
 
   newProjectListener.addEventListener("click", function() {
-    new CreateProject();
+    const mainContentContainerListener = document.getElementById("mainContentContainer");
+    mainContentContainerListener.appendChild(new CreateProject("99 woodcutting"));
+    
+    // new CreateProject();
   });
 
   newTodoListener.addEventListener("click", function() {
