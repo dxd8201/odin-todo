@@ -1,13 +1,15 @@
 import CreateTodo from './createTodo.js'
+import appendTodo from './appendTodo.js'
 //should create a modal popup for a project creation card
 //background should be covered by modal card with a semi-transparent color. 
 
 export default function CreateProject(title) {
 
     this.title = title;
+    
 
     const todoProjectContainer = document.createElement("div");
-    todoProjectContainer.classList.add("todo-project-container")
+    todoProjectContainer.classList.add("todo-project-container");
     todoProjectContainer.setAttribute("id", "todoProjectContainer");
 
     const mainProjectTitleContainer = document.createElement("div");
@@ -21,22 +23,12 @@ export default function CreateProject(title) {
     mainProjectTitleContainer.appendChild(mainProjectTitle);
     mainProjectTitle.textContent = title;
     
-    const todoCreationIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 add-todo-icon" id="newTodo2"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/> </svg>';
-    mainProjectTitleContainer.innerHTML += todoCreationIcon;
-
-
-
-    // todoCreationIcon.addEventListener("click", function() {
-    //     const todoTaskContainerListener = document.getElementById("todoTaskContainer");
-    //     todoTaskContainerListener.appendChild(new CreateTodo("99 woodcutting", "7/31/2023"));
-        
-    //     // new CreateTodo("99 woodcutting", "7/31/2023");
     
-        
-    //   });
-
-
+    const todoCreationIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 add-todo-icon" id="newTodo"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/> </svg>';
+    mainProjectTitleContainer.innerHTML += todoCreationIcon;
+    
     console.log("create project module is hooked up")
+    appendTodo();
 
     return todoProjectContainer
      

@@ -11,23 +11,22 @@ function component() {
   
 const contentCreation = (() => {
   const newProjectListener = document.getElementById("newProject"); 
-  const newTodoListener = document.getElementById("newTodo");
+  const todoListenerArray = document.querySelectorAll("#newTodo");
 
   newProjectListener.addEventListener("click", function() {
     const mainContentContainerListener = document.getElementById("mainContentContainer");
     mainContentContainerListener.appendChild(new CreateProject("99 woodcutting"));
-    
-    // new CreateProject();
   });
 
-  newTodoListener.addEventListener("click", function() {
-    const todoTaskContainerListener = document.getElementById("todoTaskContainer");
-    todoTaskContainerListener.appendChild(new CreateTodo("99 woodcutting", "7/31/2023"));
-    
-    // new CreateTodo("99 woodcutting", "7/31/2023");
 
-    
-  });
+  // todoListenerArray.forEach(function(ele) {
+  //   ele.addEventListener("click", function() {
+  //     const todoTaskContainerListener = document.getElementById("todoTaskContainer");
+  //     todoTaskContainerListener.appendChild(new CreateTodo("99 woodcutting", "7/31/2023"));
+  //   });
+  // })
+
+  
 
 })();
 
