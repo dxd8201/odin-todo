@@ -1,8 +1,5 @@
 import CreateTodo from './createTodo.js'
 
-//bug to fix --> creates more todo tasks if createProject has ran
-//has something to do with not being able to read getAttribute
-
 //function to create event listeners and append todos to correct project container
 export default function appendTodo () {
     let todoListenerArray = document.querySelectorAll("#newTodo");
@@ -15,13 +12,12 @@ export default function appendTodo () {
     }
 
     //runs through todo array and adds an event listener to all todo creation elements.
-      for (let i = 0; i <= todoListenerArray.length; i++) {
-        //checks if an event listener has already been added
+      for (let i = 0; i < todoListenerArray.length; i++) {
+        //checks if an event listener has already been added, and adds one if it does not have an event listener
         if (todoListenerArray[i].getAttribute('data-event-clicked') !== 'true') {
+          todoListenerArray[i].setAttribute('data-event-clicked', 'true');
           todoListenerArray[i].addEventListener('click', function (e) {
-              const elementClicked = e.target;
-              elementClicked.setAttribute('data-event-clicked', 'true');
-              console.log('event has been attached');
+              console.log(`event has been attached to ${i}`);
               addTodo(i);
          });
         }

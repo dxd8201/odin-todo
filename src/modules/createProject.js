@@ -37,7 +37,8 @@ export default function CreateProject(title) {
     setTimeout(() => {
         appendTodo();
         // deleteTodo();
-      }, 1000);
+      }, 2000);
+    
     
 
     return todoProjectContainer

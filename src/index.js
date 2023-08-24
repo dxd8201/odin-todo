@@ -12,7 +12,7 @@ const contentCreation = (() => {
   });
 
   //test container
-  //runs appendTodo to add eventlistener to createdo icons on load
+  //runs appendTodo to add eventlistener to create todo icons on load
   const mainContentContainerListener = document.getElementById("mainContentContainer");
   mainContentContainerListener.appendChild(new CreateProject('Test Project'));
 
