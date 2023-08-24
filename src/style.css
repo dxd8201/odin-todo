@@ -17,6 +17,7 @@
     grid-template-rows: .5fr 1fr  1fr 1fr;
 
     min-height: 100vh;
+    max-height: 100vh;
     width: 100vw;
 }
 
@@ -29,6 +30,7 @@
     grid-area: 1 / 1 / 2 / 5;
     box-shadow: 0 8px 6px -6px rgb(0 0 0);
     z-index: 2;
+    max-height: 7rem;
 }
 
 .title-logo-container {
@@ -59,6 +61,7 @@
 .main-content-container {
     background-color: rgb(30, 29, 49);
     grid-area: 2 / 2 / 5 / 5;
+    overflow: scroll;
 }
 
 .todo-project-container {
@@ -192,6 +195,7 @@
     align-items: flex-start;
     flex: 1 1 0;
     width: 100%;
+    max-height: 5rem;
     padding: 1rem 1rem 1rem 3rem;
 }
 

@@ -1,4 +1,6 @@
 export default function CreateTodo(title, dueDate) {
+    //would it be better to hold the array here?
+
 
     this.title = title;
     this.dueDate = dueDate;
