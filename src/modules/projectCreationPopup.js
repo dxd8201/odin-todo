@@ -1,6 +1,8 @@
 import CreateProject from './createProject.js'
 
 export default function projectCreationPopup() {
+    const mainContentContainerListener = document.getElementById("mainContentContainer");
+    
     const mainPopupContainer = document.createElement("div");
     mainPopupContainer.classList.add("main-popup-container");
     mainPopupContainer.setAttribute("id", "mainPopupContainer");
@@ -32,9 +34,23 @@ export default function projectCreationPopup() {
     submitBtn.setAttribute("id", "submitBtn");
     submitBtn.textContent = "Submit";
     popupFlexContainer.appendChild(submitBtn);
+
+    function getInputValue() {
+        let inputValue = document.getElementById("titleInput").value;
+        console.log(inputValue);
+
+        return inputValue
+    }
     
 
-    // submitBtn.addEventListener("click", CreateProject("99 woodcutting"));
+    submitBtn.addEventListener("click", function () {
+        
+        getInputValue();
+        mainContentContainerListener.appendChild(new CreateProject(getInputValue()));
+        mainPopupContainer.remove();
+        
+        
+    });
 
 
     return mainPopupContainer
