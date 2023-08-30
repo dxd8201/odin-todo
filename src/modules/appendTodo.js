@@ -1,4 +1,5 @@
-import CreateTodo from './createTodo.js'
+import CreateTodo from './createTodo.js';
+import todoCreationPopup from './todoCreationPopup.js';
 
 //function to create event listeners and append todos to correct project container
 export default function appendTodo () {
@@ -8,7 +9,7 @@ export default function appendTodo () {
     //function to append the todo to the corresponding todo task container
     const addTodo = function(i) {
       console.log(`You created a do on the ${i}th container`);
-      todoTaskContainerListener[i].appendChild(new CreateTodo("99 woodcutting", "7/31/2023"));
+      todoTaskContainerListener[i].appendChild(new CreateTodo(todoCreationPopup(), "TBD"));
     }
 
     //runs through todo array and adds an event listener to all todo creation elements.

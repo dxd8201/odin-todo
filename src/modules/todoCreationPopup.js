@@ -1,4 +1,4 @@
-import CreateProject from './createProject.js';
+import CreateProject from './createProject.js'
 
 export default function projectCreationPopup() {
     const mainContentContainerListener = document.getElementById("mainContentContainer");
@@ -17,17 +17,17 @@ export default function projectCreationPopup() {
     formContainer.setAttribute("id", "formContainer");
     popupFlexContainer.appendChild(formContainer);
 
-    const titleLabel = document.createElement("label");
-    titleLabel.setAttribute("for", "titleInput");
-    titleLabel.classList.add("title-label");
-    titleLabel.textContent = "Project Title:";
-    formContainer.appendChild(titleLabel);
+    const todoLabel = document.createElement("label");
+    todoLabel.setAttribute("for", "todoInput");
+    todoLabel.classList.add("todo-label");
+    todoLabel.textContent = "Todo:";
+    formContainer.appendChild(todoLabel);
 
-    const titleInput = document.createElement("input");
-    titleInput.setAttribute("type", "text");
-    titleInput.classList.add("popup-input");
-    titleInput.setAttribute("id", "titleInput");
-    formContainer.appendChild(titleInput);
+    const todoInput = document.createElement("input");
+    todoInput.setAttribute("type", "text");
+    todoInput.classList.add("popup-input");
+    todoInput.setAttribute("id", "todoInput");
+    formContainer.appendChild(todoInput);
 
     const submitBtn = document.createElement("button");
     submitBtn.classList.add("submit-btn");
