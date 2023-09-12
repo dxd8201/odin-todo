@@ -1,4 +1,5 @@
-import CreateTodo from './createTodo.js'
+import CreateTodo from './createTodo.js';
+import appendTodo from './appendTodo.js';
 
 export default function todoCreationPopup(j) {
     const mainContentContainerListener = document.getElementById("mainContentContainer");
@@ -44,7 +45,8 @@ export default function todoCreationPopup(j) {
     
     submitBtn.addEventListener("click", function () {
         getInputValue();
-        new CreateTodo(getInputValue(), "The date", j)
+        new CreateTodo(getInputValue(), "The date", j);
+        appendTodo();
         mainPopupContainer.remove();
     });
 
