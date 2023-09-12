@@ -5,12 +5,13 @@ import todoCreationPopup from './todoCreationPopup.js';
 export default function appendTodo () {
     let todoListenerArray = document.querySelectorAll("#newTodo");
     let todoTaskContainerListener = document.querySelectorAll("#todoTaskContainer");
+    const headerContainerListener = document.getElementById("mainGridContainer");
 
-    //function to append the todo to the corresponding todo task container
-    const addTodo = function(i) {
-      console.log(`You created a do on the ${i}th container`);
-      todoTaskContainerListener[i].appendChild(new CreateTodo(todoCreationPopup(), "TBD"));
-    }
+    // //function to append the todo to the corresponding todo task container
+    // const addTodo = function(i) {
+    //   console.log(`You created a do on the ${i}th container`);
+    //   todoTaskContainerListener[i].appendChild(new CreateTodo(todoCreationPopup(), "TBD"));
+    // }
 
     //runs through todo array and adds an event listener to all todo creation elements.
       for (let i = 0; i < todoListenerArray.length; i++) {
@@ -19,7 +20,8 @@ export default function appendTodo () {
           todoListenerArray[i].setAttribute('data-event-clicked', 'true');
           todoListenerArray[i].addEventListener('click', function (e) {
               console.log(`event has been attached to ${i}`);
-              addTodo(i);
+              headerContainerListener.appendChild(todoCreationPopup(i));
+              // addTodo(i);
          });
         }
       }

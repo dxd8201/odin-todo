@@ -1,6 +1,6 @@
-import CreateProject from './createProject.js'
+import CreateTodo from './createTodo.js'
 
-export default function projectCreationPopup() {
+export default function todoCreationPopup(j) {
     const mainContentContainerListener = document.getElementById("mainContentContainer");
     
     const mainPopupContainer = document.createElement("div");
@@ -36,16 +36,15 @@ export default function projectCreationPopup() {
     popupFlexContainer.appendChild(submitBtn);
 
     function getInputValue() {
-        let inputValue = document.getElementById("titleInput").value;
+        let inputValue = document.getElementById("todoInput").value;
         console.log(inputValue);
 
         return inputValue
     }
     
-
     submitBtn.addEventListener("click", function () {
         getInputValue();
-        mainContentContainerListener.appendChild(new CreateProject(getInputValue()));
+        new CreateTodo(getInputValue(), "The date", j)
         mainPopupContainer.remove();
     });
 
