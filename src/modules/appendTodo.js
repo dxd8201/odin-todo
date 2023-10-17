@@ -1,8 +1,8 @@
 import deleteTodo from './deleteTodo.js';
-import todoCreationPopup from './todoCreationPopup.js';
+import { arrayHandler, todoCreationPopup } from './todoCreationPopup.js';
 
 //function to create event listeners and append todos to correct project container
-export default function appendTodo () {
+export default function appendTodo (id) {
     let todoListenerArray = document.querySelectorAll("#newTodo");
     const mainGridContainerListener = document.getElementById("mainGridContainer");
     const deleteIconListener = document.querySelectorAll("#deleteTodo");
@@ -26,7 +26,8 @@ export default function appendTodo () {
          deleteIconListener[i].setAttribute('data-event-clicked', 'true');
           deleteIconListener[i].addEventListener('click', function() {
             console.log("You clicked on the delete icon");
-            deleteTodo(i);
+            console.log(`Delete ID is ${id}`);
+            deleteTodo(id);
         });
         }
       }

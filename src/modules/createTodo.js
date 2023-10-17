@@ -1,9 +1,13 @@
-export default function CreateTodo(title, dueDate, j) {
+import arrayHandler from './arrayHandler.js'
+
+export default function CreateTodo(title, dueDate, j, id) {
     const todoTaskContainerListener = document.querySelectorAll("#todoTaskContainer");
     
-
+    let array = Array.from(todoTaskContainerListener);
+    
     this.title = title;
     this.dueDate = dueDate;
+    this.id = id;
 
     const singleTodoTaskContainer = document.createElement("div");
     singleTodoTaskContainer.classList.add("single-todo-task-container");
@@ -24,12 +28,15 @@ export default function CreateTodo(title, dueDate, j) {
     //appends the todo to the correct container
     for (let i = 0; i < todoTaskContainerListener.length; i++) {
         if (i === j) {
-            todoTaskContainerListener[i].appendChild(singleTodoTaskContainer);
+            // todoTaskContainerListener[i].appendChild(singleTodoTaskContainer);
+            array[i].appendChild(singleTodoTaskContainer);
         }
     }
 
     console.log("create todo module is hooked up");
+    console.log(this);
+    console.log(singleTodoTaskContainer);
 
-    return singleTodoTaskContainer
+    
     }
     

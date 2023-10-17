@@ -1,8 +1,21 @@
 import CreateTodo from './createTodo.js';
 import appendTodo from './appendTodo.js';
 
-export default function todoCreationPopup(j) {
+let todoArray = [];
+
+function arrayHandler() {
+    return todoArray
+}
+
+function todoCreationPopup(j) {
     const mainContentContainerListener = document.getElementById("mainContentContainer");
+
+    const uuid = require('uuid');
+    const id = uuid.v4();
+
+    console.log(id);
+
+    
     
     const mainPopupContainer = document.createElement("div");
     mainPopupContainer.classList.add("main-popup-container");
@@ -45,11 +58,15 @@ export default function todoCreationPopup(j) {
     
     submitBtn.addEventListener("click", function () {
         getInputValue();
-        new CreateTodo(getInputValue(), "The date", j);
-        appendTodo();
+        // new CreateTodo(getInputValue(), "The date", j, id);
+        todoArray.push(new CreateTodo(getInputValue(), "The date", j, id));
+        appendTodo(id);
         mainPopupContainer.remove();
+        console.log(todoArray);
     });
 
-
     return mainPopupContainer
+
 }
+
+export { arrayHandler, todoCreationPopup }
