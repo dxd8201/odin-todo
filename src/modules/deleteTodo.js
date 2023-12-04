@@ -13,7 +13,6 @@ export default function deleteTodo(id) {
       //removes the item from the array, but must remove the item from all arrays
       // todoTaskContainerListener.splice(i, 1);
 
-
       //Needs to read if (object.id === id)
       for(let i = 0; i < todoTaskContainerListener.length; i++) {
         if(arrayHandler()[i].id === id) {
@@ -33,8 +32,6 @@ export default function deleteTodo(id) {
     }
 
     removeTodo(id);
-
       console.log("delete todo Ran");
-
       return todoTaskContainerListener
 }

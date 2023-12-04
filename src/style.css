@@ -87,7 +87,7 @@
     transition: 1s all;
 }
 
-.add-todo-icon {
+.add-todo-icon, .delete-project-icon {
     color: #fff;
     height: 2rem;
     width: 2rem;
